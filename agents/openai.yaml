@@ -1,0 +1,7 @@
+interface:
+  display_name: "Santa Skill"
+  short_description: "Christmas versions of your Amazon listing images, on your ChatGPT plan"
+  default_prompt: "$santa-skill "
+
+policy:
+  allow_implicit_invocation: true
