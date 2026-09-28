@@ -21,7 +21,7 @@ Subcommands (the run folder is ./santa/<ASIN>):
            [--failed REASON]              or record that image_gen refused it (no retry)
   regen    <DIR> <NAME> [--note TEXT]     the one allowed retry: note into the scene, first attempt aside
   check    <DIR>                          mean brightness before vs after (flags a drop over 8%)
-  verify   <DIR> [--apply [FILE]]         print the judging task (with the MEASURED framing) / apply answers
+  verify   <DIR> [--apply [FILE]]         print the judging task (with advisory scene matching) / apply answers
   sheet    <DIR>                          write contact-sheet.html and report.md
 
 Catalog mode (many products) lives in catalog.py beside this file and reuses these functions.

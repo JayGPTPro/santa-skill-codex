@@ -29,7 +29,7 @@ and swimwear stay sunny, with Christmas decorations and unchanged clothing.
    npx skills add JayGPTPro/santa-skill-codex -g -a codex
    ```
 
-   No Node? Download this repo and copy it by hand: `mkdir -p ~/.agents/skills && cp -R santa-skill-codex ~/.agents/skills/santa-skill`
+   No Node? Download this repo and copy it by hand: `mkdir -p ~/.agents/skills/santa-skill && cp -R santa-skill-codex/{SKILL.md,README.md,agents,scripts,references} ~/.agents/skills/santa-skill/`
    (on Windows the folder is `%USERPROFILE%\.agents\skills`).
 
 3. Install the two picture helpers the skill uses:
@@ -67,7 +67,7 @@ After that it works on its own and tells you when it is done.
 
 ## What you get
 
-- `santa/<ASIN>/christmas/` holds the Christmas images, ready to upload as secondary images.
+- `santa/<ASIN>/christmas/` holds the Christmas images. Only images marked stage ready passed the visual checks.
 - `santa/<ASIN>/contact-sheet.html` shows every image before and after, with a verdict under each.
 - `santa/<ASIN>/originals/` keeps your current images, so you can switch back in January.
 - For several products: `santa-catalog/my-store/index.html` shows the whole store dressed.
@@ -83,3 +83,6 @@ After that it works on its own and tells you when it is done.
 - If the image tool refuses an edit, the report records the actual reason and continues.
 - If Amazon blocks the download, save the listing images into a folder and type
   `$santa-skill /path/to/that/folder`.
+
+Generated edits can still alter fine text, faces or product details. Review the before/after sheet;
+failed images remain marked for review, even after their one allowed retry.

@@ -229,7 +229,7 @@ def cmd_discover(args):
     if total and total > len(asins):
         log(f"Amazon reports {total} results; {len(asins)} were read before the cap or a block.")
     log(f"Rough estimate: ~{len(taken) * 4} Christmas images (about four per product). Each one is an image_gen")
-    log("call on your ChatGPT plan; OpenAI says image turns use the plan's limits 3 to 5 times faster than text.")
+    log("call on your ChatGPT plan; capacity depends on your plan and other usage.")
     log("Products are finished one at a time, so whatever the limit allows is complete and uploadable.")
     if args.max_images:
         log(f"Image ceiling for this catalog: {args.max_images}.")

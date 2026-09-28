@@ -35,8 +35,7 @@ and shown on the sheet.
   skill's CLI fallback (`scripts/image_gen.py`), never an `OPENAI_API_KEY`, never another image
   model, not as a fallback. If `image_gen` is unavailable, stop and say so.
 - Looking (classify and verify): you, with `view_image`.
-- Everything else is the scripts: fetching, folders, the prompts, the measured checks (size and
-  position of the product, brightness), the sheets. The scripts never call a model.
+- Everything else is the scripts: fetching, folders, the prompts, brightness checks and advisory scene matching, the sheets. The scripts never call a model.
 
 `image_gen` must receive the original as its edit target. Open the input with `view_image`, then
 call `image_gen` with `referenced_image_paths` containing that exact absolute INPUT path.
@@ -164,8 +163,8 @@ Finishing products one at a time means that when the plan's limit stops the run,
 product is complete and uploadable. The state is on disk: in a new Codex session, "continue
 santa" is just `next` on the same folder.
 
-Plan usage: every image is one `image_gen` call, and OpenAI says image turns use the plan's limits
-3 to 5 times faster than text turns. A user who wants a ceiling passes `--max-images 40` to
+Plan usage: every image is one `image_gen` call. Capacity varies with your plan and other usage;
+there is no fixed image count guaranteed by this skill. A user who wants a ceiling passes `--max-images 40` to
 `discover` or `next`; products past it are held and named, and `next --max-images 80` continues.
 
 ```
